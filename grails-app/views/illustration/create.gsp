@@ -25,14 +25,19 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.illustration}" method="POST">
+            <form action="/illustration/save" method="post" enctype="multipart/form-data">
                 <fieldset class="form">
-                    <f:all bean="illustration"/>
+                    <div class='fieldcontain'>
+                        <label for='illustration'>
+                            File Name
+                        </label>
+                        <input type="file" name="myFile" id="illustration">
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <input type="submit" name="create" class="save" value="Create" id="create" />
                 </fieldset>
-            </g:form>
+            </form>
         </div>
     </body>
 </html>

@@ -26,15 +26,28 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.illustration}" method="PUT">
-                <g:hiddenField name="version" value="${this.illustration?.version}" />
-                <fieldset class="form">
-                    <f:all bean="illustration"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
+                    <form action="/illustration/update/${illustration.id}" method="post" enctype="multipart/form-data">
+                        <fieldset class="form">
+                            <div class="fieldcontain">
+                                <label for="fileName">File name</label>
+                                <label id="fileName">${illustration.fileName}</label>
+                            </div>
+                            <div class='fieldcontain'>
+                                <label for='imgFile'>
+                                    Illustration
+                                </label>
+                                <img src="http://localhost:8081/assets/${illustration.fileName}" id="imgFile"
+                                     style="height: 150px; width: 150px">
+                            </div>
+                            <div class="fieldcontain">
+                                <label for="imgFileEdit">Edit illustration</label>
+                                <input type="file" name="myFile" id="imgFileEdit">
+                            </div>
+                        </fieldset>
+                        <fieldset class="buttons">
+                            <input class="save" type="submit" value="Update" />
+                        </fieldset>
+                    </form>
         </div>
     </body>
 </html>

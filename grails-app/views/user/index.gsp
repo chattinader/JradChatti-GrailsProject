@@ -29,7 +29,7 @@
                 <g:each in="${userList}" var="instance">
                     <tr>
                         <td><g:link controller="user" action="show" id="${instance.id}">${instance.userName}</g:link></td>
-                        <td><img src="http://localhost:8081/assets/${instance.thumbnail.fileName}" style="width: 150px; height: 150px"></td>
+                        <td><img src="http://localhost:8081/assets/${instance.thumbnail.fileName}" style="width: 50px; height: 50px"></td>
                         <td>
                             <ul>
                                 <g:each in="${instance.annonce}" var="annonce">

@@ -33,18 +33,16 @@
             </g:eachError>
         </ul>
     </g:hasErrors>
-    <g:form resource="${this.user}" method="PUT">
-        <g:hiddenField name="version" value="${this.user?.version}"/>
-        <fieldset class="form">
-            <form action="/user/update/${user.id}" method="post">
-                <input type="hidden" name="_method" value="PUT"
+            <form action="/user/update/${user.id}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="post"
                        id="_method"/>
                 <input type="hidden" name="version" value="1" id="version"/>
                 <fieldset class="form">
                     <div class='fieldcontain required'>
                         <label for='userName'>
                             User Name<span class='required-indicator'>*</span>
-                        </label><input type="text" name="userName" value="${user.userName}" required="" maxlength="20"
+                        </label>
+                        <input type="text" name="userName" value="${user.userName}" required="" maxlength="20"
                                        id="userName"/>
                     </div>
 
@@ -55,16 +53,20 @@
                         <input type="password" name="password" required="" maxlength="30" id="password"/>
                     </div>
 
-                    <div class='fieldcontain required'>
+                    <div class='fieldcontain'>
                         <label for='thumbnail'>
-                            Thumbnail<span class='required-indicator'>*</span>
+                            Thumbnail
                         </label>
-                        <g:select id="thumbnail"
-                                  name="thumbnail.id"
-                                  from="${Illustration.list()}"
-                                  value="${fileName?.thumbnail*.id}"
-                                  optionKey="id"/>
-
+                        <a href="/illustration/show/${user.thumbnail.id}" id="thumbnail">
+                            <img src="http://localhost:8081/assets/${user.thumbnail.fileName}"
+                                 style="height: 150px; width: 150px">
+                        </a>
+                    </div>
+                    <div class="fieldcontain">
+                        <label for='thumbnailEdit'>
+                            Edit thumbnail
+                        </label>
+                        <input type="file" name="myFile" id="thumbnailEdit">
                     </div>
 
                     <div class='fieldcontain'>
@@ -77,13 +79,12 @@
                         <a href="/annonce/create?user.id=${user.id}">Add Annonce</a>
                     </div>
                 </fieldset>
-            </form>
         </fieldset>
         <fieldset class="buttons">
-            <input class="save" type="submit"
+            <input class="update" type="submit"
                    value="${message(code: 'default.button.update.label', default: 'Update')}"/>
         </fieldset>
-    </g:form>
+    </form>
 </div>
 </body>
 </html>

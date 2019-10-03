@@ -35,17 +35,19 @@
 <div class="footer row" role="contentinfo">
     <div class="col">
         <a href="http://docs.grails.org" target="_blank">
-            <asset:image src="documentation.svg" alt="Grails Documentation" class="float-left"/>
+            <asset:image src="dev.png" alt="Grails Documentation" class="float-left"/>
         </a>
-        <strong class="centered"><a href="http://docs.grails.org" target="_blank">Hamza JRAD</a></strong>
-        <p>Ready to dig in? You can find in-depth documentation for all the features of Grails in the <a href="http://docs.grails.org" target="_blank">User Guide</a>.</p>
+        <br>
+        <p>Developed by</p>
+        <strong class="centered">Hamza JRAD & Nader CHATTI</strong>
     </div>
     <div class="col">
         <a href="http://docs.grails.org" target="_blank">
-            <asset:image src="documentation.svg" alt="Grails Documentation" class="float-left"/>
+            <asset:image src="github.png" alt="Grails Documentation" class="float-left"/>
         </a>
-        <strong class="centered"><a href="http://docs.grails.org" target="_blank">Nader CHATTI</a></strong>
-        <p>Ready to dig in? You can find in-depth documentation for all the features of Grails in the <a href="http://docs.grails.org" target="_blank">User Guide</a>.</p>
+        <br>
+        <p>project available on GitHub via the link below</p>
+        <a href="https://github.com/chattinader/JradChatti-GrailsProject" target="_blank">https://github.com/chattinader/JradChatti-GrailsProject</a>
     </div>
 </div>
 

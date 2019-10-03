@@ -6,8 +6,9 @@ import static org.springframework.http.HttpStatus.*
 class UserController {
 
     UserService userService
+    UserIllustrationService userIllustrationService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -23,6 +24,10 @@ class UserController {
     }
 
     def save(User user) {
+        String filename = "myFile"
+
+        userIllustrationService.uploadFile(user, request, filename)
+
         if (user == null) {
             notFound()
             return
@@ -49,6 +54,10 @@ class UserController {
     }
 
     def update(User user) {
+        String filename = "myFile"
+
+        userIllustrationService.uploadFile(user, request, filename)
+
         if (user == null) {
             notFound()
             return

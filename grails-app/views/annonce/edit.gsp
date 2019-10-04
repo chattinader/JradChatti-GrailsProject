@@ -33,7 +33,8 @@
             </g:eachError>
         </ul>
     </g:hasErrors>
-    <form action="/annonce/update/${annonce.id}" method="post" enctype="multipart/form-data"><input type="hidden" name="_method" value="PUT" id="_method"/>
+
+    <g:form resource="${this.annonce}" method="post" enctype="multipart/form-data">
         <fieldset class="form">
             <div class='fieldcontain required'>
                 <label for='title'>
@@ -60,11 +61,15 @@
             <div class='fieldcontain'>
                 <label for='illustration'>Illustration</label>
                 <g:each in="${annonce.illustration}" var="illustration">
-                    <g:link controller="annonce" action="show" id="${illustration.id}">
+                    <g:link controller="annonce" action="deleteIllustration"
+                            params="[illustrationId: illustration.id, annonceId: annonce.id]"
+                            onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">
                         <img src="http://localhost:8081/assets/${illustration.fileName}"
                              style="height: 50px; width: 50px;"/>
                     </g:link>
+
                 </g:each>
+
             </div>
 
             <div class='fieldcontain'>
@@ -75,8 +80,8 @@
             <div class='fieldcontain'>
                 <label for='state'>State</label>
                 <g:checkBox name="state"
-                       value="${annonce.state}"
-                       id="state"/>
+                            value="${annonce.state}"
+                            id="state"/>
             </div>
 
             <div class='fieldcontain required'>
@@ -93,7 +98,7 @@
         <fieldset class="buttons">
             <input class="update" type="submit" value="Update"/>
         </fieldset>
-    </form>
+    </g:form>
 </div>
 </body>
 </html>

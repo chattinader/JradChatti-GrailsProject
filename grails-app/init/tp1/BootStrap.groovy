@@ -16,8 +16,8 @@ class BootStrap {
                     valideTill: new Date(),
                     state: Boolean.TRUE
             )
-                    .addToIllustration(new Illustration(fileName: 'apple-touch-icon-retina.png'))
-                    .addToIllustration(new Illustration(fileName: 'apple-touch-icon-retina.png'))
+                    .addToIllustration(new Illustration(fileName: 'dev.png'))
+                    .addToIllustration(new Illustration(fileName: 'github.png'))
             userInstance.addToAnnonce(annonceInstance)
         }
         userInstance.save(flush: true, failOnError: true)

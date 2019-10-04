@@ -27,7 +27,11 @@
             <g:pageProperty name="page.nav"/>
         </ul>
     </div>
-
+    <div class="row collapse navbar-collapse" style="height: 0.8px;">
+        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+            <div class="col-sm-auto"><g:link controller="${c.logicalPropertyName}">${c.logicalPropertyName}</g:link></div>
+        </g:each>
+    </div>
 </nav>
 
 <g:layoutBody/>

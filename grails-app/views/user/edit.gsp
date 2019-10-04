@@ -55,18 +55,13 @@
 
                     <div class='fieldcontain'>
                         <label for='thumbnail'>
-                            Thumbnail
-                        </label>
-                        <a href="/illustration/show/${user.thumbnail.id}" id="thumbnail">
-                            <img src="http://localhost:8081/assets/${user.thumbnail.fileName}"
-                                 style="height: 150px; width: 150px">
-                        </a>
-                    </div>
-                    <div class="fieldcontain">
-                        <label for='thumbnailEdit'>
                             Edit thumbnail
                         </label>
-                        <input type="file" name="myFile" id="thumbnailEdit">
+                        <label for="thumbnailEdit" id="thumbnail">
+                            <img src="http://localhost:8081/assets/${user.thumbnail.fileName}"
+                                 style="height: 150px; width: 150px;">
+                            <input type="file" name="myFile" aria-hidden="true" hidden id="thumbnailEdit">
+                        </label>
                     </div>
 
                     <div class='fieldcontain'>

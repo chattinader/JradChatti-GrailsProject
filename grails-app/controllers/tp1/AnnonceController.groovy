@@ -1,10 +1,6 @@
 package tp1
 
-import grails.core.GrailsApplication
 import grails.validation.ValidationException
-
-import javax.servlet.http.HttpServletRequest
-
 import static org.springframework.http.HttpStatus.*
 
 class AnnonceController {
@@ -57,7 +53,12 @@ class AnnonceController {
         respond annonceService.get(id)
     }
 
+    def editIllustration(Long id) {
+        respond annonceService.get(id)
+    }
+
     def update(Annonce annonce) {
+        println("J'ai fais un update")
         String filename = "myFile"
 
         annonceIllustrationService.uploadFile(annonce, request, filename)
@@ -108,5 +109,17 @@ class AnnonceController {
             }
             '*' { render status: NOT_FOUND }
         }
+    }
+
+    def deleteIllustration() {
+        def illustrationId = params.illustrationId
+        def annonceId = params.annonceId
+        def annonceInstance = Annonce.get(annonceId)
+        def illustrationInstance = Illustration.get(illustrationId)
+        annonceInstance.removeFromIllustration(illustrationInstance)
+        annonceInstance.save(flush: true)
+        illustrationInstance.delete(flush: true)
+
+        redirect(controller: "annonce", action: "edit", id: annonceId)
     }
 }

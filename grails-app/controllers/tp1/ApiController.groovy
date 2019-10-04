@@ -33,7 +33,7 @@ class ApiController {
                     return response.status = 404
                 annonceInstance.setTitle(params.title)
                 annonceInstance.setDescription(params.description)
-                annonceInstance.setValideTill(new SimpleDateFormat(pattern).parse(params.validTill))
+                annonceInstance.setValideTill(new SimpleDateFormat(pattern).parse(params.valideTill))
                 annonceInstance.setState(new Boolean(params.state))
                 annonceService.save(annonceInstance)
                 return response.status = 200
@@ -85,13 +85,24 @@ class ApiController {
                     xml { render annonceList as XML }
                 }
                 break
-            //case 'POST':
-                // Annonce newAnnonce
-                // def newAnnonce = new Annonce(title: params.title, description: params.description, validTill: new SimpleDateFormat(pattern).parse(params.validTill))
-                //newAnnonce.save( flush: true )
-                //annonceService.save(newAnnonce)
-                //return response.status = 200
-                //break
+            case 'POST':
+                def file = request.getFile("file")
+                def user = User.get(params.user)
+                if (!params.user || !params.title || !params.description || !params.valideTill || !params.state || !file)
+                    return response.status = 400
+                def fileName = file.getOriginalFilename()
+                file.transferTo(new File(grailsApplication.config.maconfig.assets_path + fileName))
+
+                 def newAnnonce = new Annonce(title: params.title, description: params.description,
+                         valideTill: new SimpleDateFormat(pattern).parse(params.valideTill), state: params.state)
+
+                 newAnnonce.addToIllustration(new Illustration(fileName: fileName))
+                 newAnnonce.author = user
+
+                 annonceService.save(newAnnonce)
+
+                 return response.status = 200
+                 break
             default:
                 return response.status = 405
                 break

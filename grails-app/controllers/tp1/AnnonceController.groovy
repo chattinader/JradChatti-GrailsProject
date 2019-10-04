@@ -53,12 +53,7 @@ class AnnonceController {
         respond annonceService.get(id)
     }
 
-    def editIllustration(Long id) {
-        respond annonceService.get(id)
-    }
-
     def update(Annonce annonce) {
-        println("J'ai fais un update")
         String filename = "myFile"
 
         annonceIllustrationService.uploadFile(annonce, request, filename)

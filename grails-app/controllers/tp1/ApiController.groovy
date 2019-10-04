@@ -85,13 +85,16 @@ class ApiController {
                     xml { render annonceList as XML }
                 }
                 break
-            //case 'POST':
-                // Annonce newAnnonce
-                // def newAnnonce = new Annonce(title: params.title, description: params.description, validTill: new SimpleDateFormat(pattern).parse(params.validTill))
-                //newAnnonce.save( flush: true )
-                //annonceService.save(newAnnonce)
-                //return response.status = 200
-                //break
+            case 'POST':
+                if (!params.user || !params.title || !params.description || !params.valideTill || !params.state)
+                    return response.status = 400
+                 def user = User.findById(params.user)
+                 def newAnnonce = new Annonce(title: params.title, description: params.description,
+                         valideTill: new SimpleDateFormat(pattern).parse(params.valideTill), state: params.state)
+                 user.addToAnnonce(newAnnonce).save( flush: true )
+                 annonceService.save(newAnnonce)
+                 return response.status = 200
+                 break
             default:
                 return response.status = 405
                 break

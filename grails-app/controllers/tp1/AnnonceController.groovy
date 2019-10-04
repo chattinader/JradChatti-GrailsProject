@@ -109,4 +109,15 @@ class AnnonceController {
             '*' { render status: NOT_FOUND }
         }
     }
+
+    def deleteIllustration ()
+    {
+        def illustrationId = params.illustrationId
+        def annonceId = params.annonceId
+        def annonceInstance = Annonce.get(annonceId)
+        def illustrationInstance = Illustration.get(illustrationId)
+        annonceInstance.removeFromIllustration(illustrationInstance)
+        annonceInstance.save(flush:true)
+        illustrationInstance.delete(flush:true)
+    }
 }

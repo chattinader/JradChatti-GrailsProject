@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "879992cb-f17e-4f09-9861-69e9c968d0fb",
+		"name": "TP-Grails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delete",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"1"
+					]
+				},
+				"description": "Get annonce"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/2?description=DescriptionTest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"2"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "DescriptionTest"
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/2?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"2"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest",
+							"disabled": true
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/2?title=Titretest&description=Test test &valideTill=2019-10-09&state=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"2"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest"
+						},
+						{
+							"key": "description",
+							"value": "Test test "
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09"
+						},
+						{
+							"key": "state",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonces/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonces",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "titre test ",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "description test file",
+							"type": "text"
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/brolyzer/Projet/JradChatti-GrailsProject/grails-app/assets/images/github.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/annonces/?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonces",
+						""
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "titre test",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "description test ",
+							"disabled": true
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "illustration",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Fail",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Fail",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/6?description=DescriptionTest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"6"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "DescriptionTest"
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one Fail",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/5?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"5"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest",
+							"disabled": true
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Fail",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/api/annonce/2?title=Titretest&description=Test test &valideTill=2019-10-09",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonce",
+						"2"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Titretest"
+						},
+						{
+							"key": "description",
+							"value": "Test test "
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09"
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Fail",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "titre test ",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "description test file",
+							"type": "text"
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/brolyzer/Projet/JradChatti-GrailsProject/grails-app/assets/images/github.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/annonces/?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"annonces",
+						""
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "titre test",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "description test ",
+							"disabled": true
+						},
+						{
+							"key": "valideTill",
+							"value": "2019-10-09",
+							"disabled": true
+						},
+						{
+							"key": "state",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "illustration",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

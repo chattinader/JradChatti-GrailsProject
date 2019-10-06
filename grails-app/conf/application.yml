@@ -141,8 +141,8 @@ server:
   port: 8081
 
 maconfig:
-  #assets_path: "/Users/brolyzer/Projet/JradChatti-GrailsProject/grails-app/assets/images"
-  assets_path: "D:/M2 MBDS/Framework Java et WEB services REST (GRAILS)/TP1/grails-app/assets/images/"
+  assets_path: "/Users/brolyzer/Projet/JradChatti-GrailsProject/grails-app/assets/images/"
+  #assets_path: "D:/M2 MBDS/Framework Java et WEB services REST (GRAILS)/TP1/grails-app/assets/images/"
   assets_url: "http://localhost:8091/assets/"
 
 grails:

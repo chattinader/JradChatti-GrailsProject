@@ -75,7 +75,7 @@ class ApiController {
     def annonces() {
         switch (request.getMethod()) {
             case 'GET':
-                def annonceList = Annonce.findAllByState(true)
+                def annonceList = Annonce.findAllByState(false)
                 if (!annonceList.id)
                     return response.status = 400
                 if (!annonceList)
